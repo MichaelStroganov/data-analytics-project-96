@@ -21,7 +21,6 @@ with visitors_with_leads as (
             and s.visit_date <= l.created_at
     where s.medium != 'organic'
 ),
-
 aggregated_data as (
     select
         utm_source,
@@ -40,7 +39,6 @@ aggregated_data as (
     where rn = 1
     group by 1, 2, 3, 4
 ),
-
 marketing_data as (
     select
         date(campaign_date) as visit_date,
@@ -60,7 +58,6 @@ marketing_data as (
     from vk_ads
     group by 1, 2, 3, 4
 )
-
 select
     a.visit_date,
     a.visitors_count,
