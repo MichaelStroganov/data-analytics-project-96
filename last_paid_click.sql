@@ -20,7 +20,6 @@ with visitors_with_leads as (
             and s.visit_date <= l.created_at
     where s.medium != 'organic'
 )
-
 select
     visitor_id,
     visit_date,
