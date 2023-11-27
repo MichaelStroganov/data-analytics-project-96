@@ -130,4 +130,4 @@ select date(campaign_date) as visit_date,
         utm_campaign,
         sum(daily_spent) as total_cost
     from vk_ads
-    group by 1, 2, 3, 4ж
+    group by 1, 2, 3, 4
