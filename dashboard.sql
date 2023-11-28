@@ -8,6 +8,7 @@ where
 	source = 'organic'
 group by
 	visit_date::date;
+
 -- Скрипт для создания сводной таблицы
 with visitors_with_leads as (
 select
@@ -112,6 +113,7 @@ order by
 	2 desc,
 	3,
 	4;
+
 -- Скрипт для поиска органических лидов 
 with visitors_with_leads as (
 select
@@ -148,6 +150,7 @@ where
 	rn = 1
 group by
 	visit_date::date;
+
 -- Скрипт для поиска затрат по каналам
 select
 	date(campaign_date) as visit_date,
