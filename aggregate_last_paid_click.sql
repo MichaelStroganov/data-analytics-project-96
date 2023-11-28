@@ -80,4 +80,3 @@ left join marketing_data as m
         and a.utm_campaign = m.utm_campaign
 order by 9 desc nulls last, 1, 2 desc, 3, 4
 limit 15
-
