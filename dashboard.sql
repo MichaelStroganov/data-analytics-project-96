@@ -10,18 +10,18 @@ group by
     visit_date::date;
 -- Скрипт для создания сводной таблицы
 with visitors_with_leads as (
-	select
-	    s.visitor_id,
-	    s.visit_date,
-	    l.lead_id,
-	    l.created_at,
-	    l.amount,
-	    l.closing_reason,
-	    l.status_id,
-	    s.medium as utm_medium,
-	    s.campaign as utm_campaign,
-	    lower(s.source) as utm_source,
-	    row_number() over (
+    select
+        s.visitor_id,
+        s.visit_date,
+        l.lead_id,
+        l.created_at,
+        l.amount,
+        l.closing_reason,
+        l.status_id,
+        s.medium as utm_medium,
+        s.campaign as utm_campaign,
+        lower(s.source) as utm_source,
+        row_number() over (
 	            partition by s.visitor_id
 	order by
 	    s.visit_date desc
